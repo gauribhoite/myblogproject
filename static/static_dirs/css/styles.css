@@ -1,0 +1,92 @@
+body{
+	color:#000305;
+	font-size: 80%;
+	font-family: 'Lucida Sans Unicode';
+	line-height: 1.5;
+	text-align: left;
+}
+
+a{
+	text-decoration: none;
+
+}
+
+a:link, a:visited{
+	color:#000;
+}
+
+a:hover, a:active{
+	color:#797979;
+}
+
+.body{
+	margin:0 auto;
+	width:75%;
+	clear:both;
+}
+
+.mainHead nav{
+	background-color: #797979;
+	height:40px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.mainHead nav ul{
+	list-style: none;
+	margin:0 auto;
+}
+
+.mainHead nav ul li{
+	float: left;
+	display:inline;
+	font-size: 50%;
+}
+
+.mainHead nav a:link, .mainHead nav a:visited{
+	color:#FFF;
+	display:inline-block;
+	padding:10px 25px;
+	height:20px;
+}
+
+.mainHead nav .active a:link,
+.main.Head nav .active a:visited,
+.mainHead nav a:hover,
+.mianHead nav a:active {
+	background-color: #04BAE3;
+	text-shadow:none;
+}
+
+.mainContent{
+	line-height: 20px;
+	border-radius: 5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+.content{
+	padding:2% 2%;
+	background-color: #f8f8f8;
+	margin: 1% 0% 1% 0%;
+	border-radius: 5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+}
+
+.postInfo{
+	font-style: italic;
+	font-size: 75%;
+	color:#989898;
+
+}
+
+.mainFooter{
+	width:100%;
+	float:center;
+	margin-bottom:2%;
+	border-radius: 5px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	background-color: #797979;
+}

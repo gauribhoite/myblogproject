@@ -28,6 +28,8 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+
+
 # Application definition
 
 INSTALLED_APPS = (
@@ -43,6 +45,7 @@ INSTALLED_APPS = (
     'cspreports',
     'djangae.contrib.gauth',
     'djangae.contrib.security',
+    'scaffold',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,11 +105,26 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+#TEMPLATE_DIRS = os.path.join(BASE_DIR, 'scaffold','templates')
+TEMPLATE_DIRS = (os.path.join(BASE_DIR, '../templates'),)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+
+
 STATIC_URL = '/static/'
+#STATIC_ROOT = '/Users/gauri_rb/Desktop/Djangoprj/prj5/static/static_root/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static','static_root')
+
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static','static_dirs'),
+    #'/Users/gauri_rb/Desktop/Djangoprj/prj5/static/static_root/',
+
+)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static','media')
+
+MEDIA_URL = '/media/'
 
 
 if DEBUG:

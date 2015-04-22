@@ -32,3 +32,8 @@ indexes:
   properties:
   - name: app
   - name: name
+
+- kind: scaffold_post
+  properties:
+  - name: __key__
+    direction: desc

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+{%load staticfiles %}
+<html lang="en">
+<head>
+	<title>My Blog</title>
+	<meta charset="utf-8"/>
+	
+
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	<meta name ="viewport content=" width-device-width, initial-scale=1.0">
+</head>
+
+<body class="body">
+	<header class="mainHead">
+		<img src="/static/img/london5.png" width="900" height="144">
+		<h1>My Blog<h1>
+		<nav><ul>
+			<li class="active"><a href="/">Home</a></li>
+			<li><a href="/login/">Login</a></li>
+
+		</ul></nav>
+	</header>	
+
+	<aside class="sideInfo">
+		<article>
+			<h3>About</h3>
+			<p>Hello Everyone! These are few of my experiences after moving to this beautiful City of London.</p>
+		</article>
+
+	</aside>
+
+	<!-- {% block content %}
+
+{% for post in object_list %}
+<h2><a href="/{{ post.id }}">{{ post.title }}</a></h2>
+<div class="post_meta">
+	on {{ post.date }}
+</div>
+
+<div class="post_body">
+	{{ post.article|safe|linebreaks }}
+
+{% endfor %}
+
+{%  endblock %} -->
+
+	<h2>First post</h2>
+
+	<footer class="mainFooter">
+		<p><copyright &copy; 2015</p>
+	</footer>
+</body>
+</html>

@@ -44,29 +44,29 @@ if __name__ == "__main__":
         print('Creating `sitepackages` directory for dependencies...')
         os.makedirs(TARGET_DIR)
 
-    if not os.path.exists(APPENGINE_TARGET_DIR):
-        print('Downloading the AppEngine SDK...')
+    # if not os.path.exists(APPENGINE_TARGET_DIR):
+    #     print('Downloading the AppEngine SDK...')
 
-        #First try and get it from the 'featured' folder
-        sdk_file = urlopen(FEATURED_SDK_REPO + APPENGINE_SDK_FILENAME)
-        if sdk_file.getcode() == 404:
-            #Failing that, 'deprecated'
-            sdk_file = urlopen(DEPRECATED_SDK_REPO + APPENGINE_SDK_FILENAME)
+    #     #First try and get it from the 'featured' folder
+    #     sdk_file = urlopen(FEATURED_SDK_REPO + APPENGINE_SDK_FILENAME)
+    #     if sdk_file.getcode() == 404:
+    #         #Failing that, 'deprecated'
+    #         sdk_file = urlopen(DEPRECATED_SDK_REPO + APPENGINE_SDK_FILENAME)
 
-        #Handle other errors
-        if sdk_file.getcode() >= 299:
-            raise Exception('App Engine SDK could not be found. {} returned code {}.'.format(sdk_file.geturl(), sdk_file.getcode()))
+    #     #Handle other errors
+    #     if sdk_file.getcode() >= 299:
+    #         raise Exception('App Engine SDK could not be found. {} returned code {}.'.format(sdk_file.geturl(), sdk_file.getcode()))
 
-        zipfile = ZipFile(StringIO(sdk_file.read()))
-        zipfile.extractall(TARGET_DIR)
+    #     zipfile = ZipFile(StringIO(sdk_file.read()))
+    #     zipfile.extractall(TARGET_DIR)
 
-        #Make sure the dev_appserver and appcfg are executable
-        for module in ("dev_appserver.py", "appcfg.py"):
-            app = os.path.join(APPENGINE_TARGET_DIR, module)
-            st = os.stat(app)
-            os.chmod(app, st.st_mode | stat.S_IEXEC)
-    else:
-        print('Not updating SDK as it exists. Remove {} and re-run to get the latest SDK'.format(APPENGINE_TARGET_DIR))
+    #     #Make sure the dev_appserver and appcfg are executable
+    #     for module in ("dev_appserver.py", "appcfg.py"):
+    #         app = os.path.join(APPENGINE_TARGET_DIR, module)
+    #         st = os.stat(app)
+    #         os.chmod(app, st.st_mode | stat.S_IEXEC)
+    # else:
+    #     print('Not updating SDK as it exists. Remove {} and re-run to get the latest SDK'.format(APPENGINE_TARGET_DIR))
 
 
     #Remove all folders and files, we leave symlinks as they will be pointing
